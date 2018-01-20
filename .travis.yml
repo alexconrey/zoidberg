@@ -11,9 +11,7 @@ before_script:
 - npm prune
 - bin/e2e-test.sh
 after_success:
-- mocha --compilers "coffee:coffeescript/register" test/*.coffee
 - npm run coverage
-- npm run semantic-release
 branches:
   except:
   - "/^v\\d+\\.\\d+\\.\\d+$/"

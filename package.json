@@ -37,7 +37,7 @@
   "scripts": {
     "test": "nyc --reporter=html --reporter=text mocha",
     "start": "bin/hubot",
-    "coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
     "test:smoke": "node src/**/*.js"
   }
 }
