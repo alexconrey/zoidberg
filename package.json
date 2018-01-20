@@ -20,12 +20,18 @@
     "hubot-scripts": "^2.17.2",
     "hubot-shipit": "^0.2.1",
     "hubot-slack": "^4.4.0",
-    "mocha": "^5.0.0"
+    "mocha": "^5.0.0",
+    "mockery": "^2.1.0",
+    "sinon": "^4.1.6",
+    "sinon-chai": "^2.14.0"
   },
   "engines": {
     "node": "0.10.x"
   },
   "devDependencies": {
     "hubot-test-helper": "^1.8.1"
+  },
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha"
   }
 }
