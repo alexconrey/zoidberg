@@ -24,4 +24,5 @@ notifications:
   slack:
     secure: B/m1DpCzsEjIo1k6O1L2AvOYnF8YVIdUx9i/birX1R79ARHEWk/Xiy6iAyCyo8oFOx56dEqz+CauyZ19lMWW/BFPhZNevkz8q34k/CigrGL/lWiCZh9P6ITctH6UWMnmcfBhuk/2upNdN1+hC8vz7QxL5mSGJKGyimLpxjK7Yz0P4/DQNIyGGyRCpQeUvwefmif9eVLB0L9kpu2jb3eAiJP2bvR2RdeVSftV6wpipar/Fu1+1n3jDmBy6h+ZvSd3OWCpPPzw072hPHwbk8lsi8Uk2+yyvtQIEmfFc18ep1aZAhphcYdRj/OkQbCV59w7kObFfSG5PYsFPmAK8D8RcBFKLmxgW1LSYLuCYI9lQkpEdfymkOpVZWZe0eDnLngm4Tf/2hp6ZuAfTrlpZeKPO3ymNTezhv9bfUt1/4eDJTpV7SE2AnjwrsW39EOsRe5mvl+ZR890d3/MtrVGQ9ZU4AhyvCYNsrH3rxye5x+8Ak0UKXdhVik+6LMQisBiaKkZ12vgskhuc9lDYuVWwCHAkvSDislp9VoSRIal5Q3IaQcOjGCwVePuv7UgDCTdyNP5SWJuBsAWeeb9Evme3js1bevchUl0RitCNckDKGW8j0gDkto9QpSAdUyu7Ok4VhvisPXBJaQx6sEve8QQDhM+vIu3wmTXyH5G0Objs0vulC4=
 before_install:
-  - openssl version
+- openssl aes-256-cbc -K $encrypted_ab1ab8207f4d_key -iv $encrypted_ab1ab8207f4d_iv
+  -in .deploy_rsa.enc -out .deploy_rsa -d -md sha256
