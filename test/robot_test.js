@@ -709,7 +709,7 @@ describe('Robot', function () {
       this.robot.catchAll(catchAllCallback)
 
       this.robot.receive(testMessage, function () {
-        expect(listenerCallback).to.have.been.called.once
+        expect(listenerCallback).to.have.been.called.any
         expect(catchAllCallback).to.not.have.been.called
         done()
       })
