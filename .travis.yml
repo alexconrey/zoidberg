@@ -1,0 +1,25 @@
+notifications:
+  slack:
+    secure: Ica2E4yJIvuJEAlVZdgkMuoEh5tg4C7pYomuDgQWl2HayVccY+56XOcNOCNI1NmKc0XdCkzEU+ANf2s7E9CGi0ySJDg06zYsmrDkuoqWM9jh7tyaOogWwHPSWhauPfakz73VsKppZfzqsbxLMOxYXXoZMpvVDZ/IqxMYFfZINiHD8prMbiEqPiO8mVgCs+u0qy0QBk22A6HNK/u2Rt1g985Ju4ZxoU3GiIQKctfLQiwKjcL0cD46K0TwLesR52aypt4JVQDOEpIIpiKH3Fh+bSf+M9ejiwtZ4jdmvTzKoXCUxgPJoKuGLnLgxzwU3pqpuHW78GR4gChHOyhE7vf78LRY/56iYOs8KUKyDAzoogI8w6GkzrVsyP5flYS9O2SUMsGCS7Fo7g6D4QvghJeQnDzqfUQELrkmSM3rXsxgtGlm56fIdOj3IKKx9BS5PdrQ0WdtFTFvNrHDgARmHu927IkUyz2nsa3X5szfqf4OP2ZLbV8OLwf4DCXXgb4pLxQBflQHXePcqgl2bjrWa2IIEUg1YTiINrdNeupRcC1w9NWBTW58OTovI3ZMwuheHR8M4bvFDAkniiI6w3evjyaBRNp1OKrJ5RtjXcar4jUlzgQjYxgHIBjkfboUZ7Qt93m/1Tcv8HgUSyppwYiQYb7zykD/4hI5QMp8Qu2wEmTHuU8=
+language: node_js
+node_js:
+  - "8"
+  - "6"
+  - "4"
+notifications:
+  email: false
+sudo: false
+addons:
+  apt:
+    packages:
+    - expect
+before_script:
+  - npm prune
+  - bin/e2e-test.sh
+after_success:
+  - npm run coverage
+  - npm run semantic-release
+branches:
+  except:
+    - /^v\d+\.\d+\.\d+$/
+
