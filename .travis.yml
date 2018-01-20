@@ -12,15 +12,11 @@ before_script:
 - bin/e2e-test.sh
 after_success:
 - npm run coverage
+- scripts/deploy.sh
 
 branches:
   except:
   - "/^v\\d+\\.\\d+\\.\\d+$/"
-deploy:
-- provider: script
-  script: scripts/deploy.sh
-  on:
-    branch: master
 
 notifications:
   slack:
