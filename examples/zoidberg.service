@@ -1,0 +1,23 @@
+; Zoidberg systemd service unit file
+; Place in e.g. `/etc/systemd/system/zoidberg.service`, then `systemctl daemon-reload` and `service zoidberg start`.
+
+[Unit]
+Description=Zoidberg
+Requires=network.target
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/zoidberg
+User=zoidberg
+
+Restart=always
+RestartSec=10
+
+ExecStart=/opt/zoidberg/bin/zoidberg-wrapper.sh 
+
+ExecStop=/bin/kill -TERM $MAINPID
+
+[Install]
+WantedBy=multi-user.target
+
