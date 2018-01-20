@@ -7,6 +7,7 @@
   "dependencies": {
     "chai": "^4.1.2",
     "coffee-script": "^1.12.7",
+    "coveralls": "^3.0.0",
     "hubot": "^2.19.0",
     "hubot-diagnostics": "0.0.2",
     "hubot-google-images": "^0.2.7",
@@ -21,6 +22,7 @@
     "hubot-shipit": "^0.2.1",
     "hubot-slack": "^4.4.0",
     "mocha": "^5.0.0",
+    "mocha-lcov-reporter": "^1.3.0",
     "mockery": "^2.1.0",
     "nyc": "^11.4.1",
     "sinon": "^4.1.6",
@@ -35,7 +37,7 @@
   "scripts": {
     "test": "nyc --reporter=html --reporter=text mocha",
     "start": "bin/hubot",
-    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
     "test:smoke": "node src/**/*.js"
   }
 }

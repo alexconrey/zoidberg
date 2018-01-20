@@ -4,3 +4,4 @@ node_modules
 package-lock.json
 .slack_creds
 coverage
+.coveralls.yml
