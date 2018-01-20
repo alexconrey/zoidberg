@@ -1,23 +1,23 @@
-notifications:
-  slack:
-    secure: GKtF+783TSQ8iM/ttMWVPNWbYlvvfSrQp4eCCoaSpQrrUByl1GhsEiAqy03nHRy5c4AAe7LowCIMEH955YHR7qaejsP67qCDs2RhB4XctJSIRg+0F4SEeq9NkEjh+rAHKARJMcaxhIAdxKrpnUPep/ClhSIlXmbYRzkg3eMW5fv0EJjBtu9OOu9ReiPz2reMv2wN+DapkKS3c2EGRU4doUHwxrHz067mg4dyE6jXyVQNIFuABxD4h14H+tykdn1n/I2Y/soi07ZEHDCzywOGRmZtdDqcd6utMEcYudbwMP0n5uAO+xfbU+roIfZa7AojKl5U478VgyWiKno1hUXy2YaSiHcQ/2y2CJyfdDd2M9o3429dU+rMFMqrLa5wLytWLyiFGy/Rm/fXWxGhwzH7yydVh85dMl1+n6j5rHG35/AgcaoEF9b9k6EdLTZxecEU2M6XMYaxYnR4mqNJXikQ9qs9zYkUheFYL3ZA5TfaeuvNn2t9m9L33Dy9BFgRVCtKOgXKxo+MbA55rUN1HshPq1YCMvsh145AbO5XlaJWRGibRWMTxP6TlBkZSGJutuu36GtfjEyWXI7HxKzZDHL7iDKMR1VR/wI2mvjlM3/zPCqvSShS3H8U05TXWt9srJsRGZ81M0BYdidLBv6jCLXGv9+eMr5MZ5zbvzleFFMSq8c=
 language: node_js
 node_js:
-  - '8'
-  - '6'
-  - '4'
+- '8'
+- '6'
+- '4'
 sudo: false
 addons:
   apt:
     packages:
-      - expect
+    - expect
 before_script:
-  - npm prune
-  - bin/e2e-test.sh
+- npm prune
+- bin/e2e-test.sh
 after_success:
-  - mocha --compilers "coffee:coffeescript/register" test/*.coffee
-  - npm run coverage
-  - npm run semantic-release
+- mocha --compilers "coffee:coffeescript/register" test/*.coffee
+- npm run coverage
+- npm run semantic-release
 branches:
   except:
-    - "/^v\\d+\\.\\d+\\.\\d+$/"
+  - "/^v\\d+\\.\\d+\\.\\d+$/"
+notifications:
+  slack:
+    secure: B/m1DpCzsEjIo1k6O1L2AvOYnF8YVIdUx9i/birX1R79ARHEWk/Xiy6iAyCyo8oFOx56dEqz+CauyZ19lMWW/BFPhZNevkz8q34k/CigrGL/lWiCZh9P6ITctH6UWMnmcfBhuk/2upNdN1+hC8vz7QxL5mSGJKGyimLpxjK7Yz0P4/DQNIyGGyRCpQeUvwefmif9eVLB0L9kpu2jb3eAiJP2bvR2RdeVSftV6wpipar/Fu1+1n3jDmBy6h+ZvSd3OWCpPPzw072hPHwbk8lsi8Uk2+yyvtQIEmfFc18ep1aZAhphcYdRj/OkQbCV59w7kObFfSG5PYsFPmAK8D8RcBFKLmxgW1LSYLuCYI9lQkpEdfymkOpVZWZe0eDnLngm4Tf/2hp6ZuAfTrlpZeKPO3ymNTezhv9bfUt1/4eDJTpV7SE2AnjwrsW39EOsRe5mvl+ZR890d3/MtrVGQ9ZU4AhyvCYNsrH3rxye5x+8Ak0UKXdhVik+6LMQisBiaKkZ12vgskhuc9lDYuVWwCHAkvSDislp9VoSRIal5Q3IaQcOjGCwVePuv7UgDCTdyNP5SWJuBsAWeeb9Evme3js1bevchUl0RitCNckDKGW8j0gDkto9QpSAdUyu7Ok4VhvisPXBJaQx6sEve8QQDhM+vIu3wmTXyH5G0Objs0vulC4=
